@@ -4,5 +4,6 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  factsApi: 'https://lmepwachucknorris.azurewebsites.net/api/GetLastFiveFacts?code=NXkN0leSRWVK80fgjqRJwdCiKTtxQ2NjPfVG5thTY9KwXNtz1MTuHA=='
 };
