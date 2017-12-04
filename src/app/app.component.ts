@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ChuckSvcService } from './chuck-svc.service';
 import { Observable } from 'rxjs/Observable';
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-root',
