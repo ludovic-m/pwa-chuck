@@ -1,2 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+mat-sidenav {
+  background-color:rgb(47, 47, 47) !important;
+  color:white !important;
+}
+
+mat-nav-list {
+  width:200px;
+}
+
+mat-list-item span, mat-sidenav .mat-slide-toggle-content {
+  color:white !important;
+  width: 100%;
+}
