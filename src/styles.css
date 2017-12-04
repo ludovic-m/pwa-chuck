@@ -10,7 +10,15 @@ mat-nav-list {
   width:200px;
 }
 
+/* mat-list-item {
+  width: 100%!important;
+} */
+
+mat-slide-toggle {
+  width:100%;
+}
+
 mat-list-item span, mat-sidenav .mat-slide-toggle-content {
   color:white !important;
-  width: 100%;
+  width: 124px;
 }

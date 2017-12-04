@@ -6,7 +6,7 @@
     "icons": [
         {
             "src": "assets/launcher-icon-1x.png",
-            "sizes": "96x96",
+            "sizes": "48x48",
             "type": "image/png"
         },
         {
@@ -34,5 +34,6 @@
     "theme_color": "#3F51B5",
     "start_url": "./?utm_source=homescreen",
     "display": "standalone",
-    "orientation": "any"
+    "orientation": "any",
+    "gcm_sender_id": "103953800507"
 }
