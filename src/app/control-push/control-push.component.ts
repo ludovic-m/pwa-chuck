@@ -5,11 +5,12 @@ import { MatSnackBar } from '@angular/material';
 import { ConfigService } from './../config.service';
 import { PushService } from './../push.service';
 import { SwPush } from '@angular/service-worker';
+import { NgswCommChannel } from '@angular/service-worker/src/low_level';
 
 
 @Component({
   selector: 'app-control-push',
-  providers: [SwPush],
+  providers: [SwPush, NgswCommChannel],
   templateUrl: './control-push.component.html',
   styleUrls: ['./control-push.component.css']
 })
