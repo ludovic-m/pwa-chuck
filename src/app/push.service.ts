@@ -14,7 +14,7 @@ export class PushService {
     private API_URL: string;
 
     constructor(private http: HttpClient, private configService: ConfigService) {
-        this.API_URL = this.configService.get('API_URL')
+        this.API_URL = this.configService.get('API_URL');
     }
 
     urlBase64ToUint8Array(base64String) {
@@ -30,7 +30,7 @@ export class PushService {
 
     addSubscriber(subscription) {
 
-        const url = `${this.API_URL}/webpush`;
+        const url = `${this.API_URL}/api/Subscribe`;
         console.log('[Push Service] Adding subscriber');
 
         let body = {
@@ -46,7 +46,7 @@ export class PushService {
 
     deleteSubscriber(subscription) {
 
-        const url = `${this.API_URL}/webpush`;
+        const url = `${this.API_URL}/api/Unsubscribe`;
         console.log('[Push Service] Deleting subscriber');
 
         let body = {

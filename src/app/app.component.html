@@ -1,21 +1,21 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <mat-sidenav-container fullscreen>
   <mat-sidenav mode="push" #sideNav color="accent">
-      <mat-nav-list color="accent">
-          <nav>
-            <div style="text-align:center;">
-                <img src="assets/MenuIcon.png" >
-            </div>
-            <br>
-            <br>
-            <br>
-            <mat-list-item>
-              <mat-slide-toggle labelPosition="before">
-                  Notifications
-              </mat-slide-toggle>
-            </mat-list-item>
-          </nav>
-      </mat-nav-list>
+    <mat-nav-list color="accent">
+      <nav>
+        <div style="text-align:center;">
+          <img src="assets/MenuIcon.png">
+        </div>
+        <br>
+        <br>
+        <br>
+        <mat-list-item>
+          <mat-slide-toggle labelPosition="before">
+            Notifications
+          </mat-slide-toggle>
+        </mat-list-item>
+      </nav>
+    </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
@@ -35,4 +35,5 @@
       </mat-card>
     </div>
   </mat-sidenav-content>
+  <app-control-push></app-control-push>
 </mat-sidenav-container>

@@ -48,12 +48,50 @@ export class ControlPushComponent implements OnInit {
   }
 
   unsubscribeFromPush() {
-    return null;
+    // Get active subscription
+    this.swPush.subscription[0]
+      .subscribe(pushSubscription => {
+
+        console.log('[App] pushSubscription', pushSubscription);
+
+        // Delete the subscription from the backend
+        this.pushService.deleteSubscriber(pushSubscription)
+          .subscribe(
+
+          res => {
+            console.log('[App] Delete subscriber request answer', res);
+
+            let snackBarRef = this.snackBar.open('Now you are unsubscribed', null, {
+              duration: this.snackBarDuration
+            });
+
+            // Unsubscribe current client (browser)
+            pushSubscription.unsubscribe()
+              .then(success => {
+                console.log('[App] Unsubscription successful', success);
+              })
+              .catch(err => {
+                console.log('[App] Unsubscription failed', err);
+              });
+
+          },
+          err => {
+            console.log('[App] Delete subscription request failed', err);
+          }
+
+          );
+
+      });
   }
 
   showMessages() {
-    // this.swPush.messages.subscribe(message => {
-    //   console.log('Message received ', message);
-    // });
+    this.swPush.messages
+    .subscribe(message => {
+
+      console.log('[App] Push message received', message);
+
+      let notification = message['notification'];
+
+    });
   }
 }

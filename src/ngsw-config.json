@@ -31,7 +31,8 @@
     {
       "name": "api-chuck",
       "urls": [
-        "https://lmepwachucknorris.azurewebsites.net/**"
+        "https://lmepwachucknorris.azurewebsites.net/**",
+        "https://fonts.googleapis.com/**"
       ],
       "cacheConfig":{
         "strategy":"freshness",
