@@ -1,0 +1,9 @@
+<div *ngFor="let fact of facts">
+  <span>Fact {{fact.Id}}</span>
+  <p>{{fact.Joke}}</p>
+</div>
+
+<button (click)="subscribeToPush()">
+  Subscribe for push</button>
+<button (click)="unsubscribeFromPush()">
+  Unsubscribe</button>
