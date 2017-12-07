@@ -23,12 +23,12 @@
       </button>
       <span>PWA Chuck!</span>
     </mat-toolbar>
-    <div *ngFor="let fact of facts">
+    <div *ngFor="let fact of facts; let first=first;">
       <mat-card>
-        <mat-card-title>
+        <mat-card-title class="cn-card-title" [ngClass]="{'cn-card-title-accent': first}">
           <span>Fact {{fact.Id}}</span>
         </mat-card-title>
-        <mat-card-content>
+        <mat-card-content class="cn-card-quote">
           <p>{{fact.Joke}}</p>
         </mat-card-content>
       </mat-card>

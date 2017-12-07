@@ -1,0 +1,17 @@
+.cn-card-title{
+    background-color: #3f51b5;
+    color: white;
+    height: 50px;
+    vertical-align: middle;
+    line-height: 50px;
+    width: 120px;
+    text-align: center;
+    border-radius: 40px;
+}
+.cn-card-title-accent{
+    background-color:#ff4081;
+}
+
+.cn-card-quote{
+    font-size:20px;
+}
