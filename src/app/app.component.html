@@ -1,9 +1,45 @@
-<div *ngFor="let fact of facts">
-  <span>Fact {{fact.Id}}</span>
-  <p>{{fact.Joke}}</p>
-</div>
-
-<button (click)="subscribeToPush()">
-  Subscribe for push</button>
-<button (click)="unsubscribeFromPush()">
-  Unsubscribe</button>
+<mat-sidenav-container fullscreen>
+  <mat-sidenav mode="push" #sideNav color="accent">
+    <mat-nav-list color="accent">
+      <nav>
+        <div style="text-align:center;">
+          <img src="assets/MenuIcon.png">
+        </div>
+        <br>
+        <br>
+        <br>
+        <mat-list-item>
+          <mat-slide-toggle labelPosition="before">
+            Notifications
+          </mat-slide-toggle>
+        </mat-list-item>
+      </nav>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="sideNav.toggle()">
+        <mat-icon class="mat-24">menu</mat-icon>
+      </button>
+      <span>PWA Chuck!</span>
+    </mat-toolbar>
+    <div *ngFor="let fact of facts">
+      <mat-card>
+        <mat-card-title>
+          <span>Fact {{fact.Id}}</span>
+        </mat-card-title>
+        <mat-card-content>
+          <p>{{fact.Joke}}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div>
+      <button mat-raised-button color="accent" (click)="subscribeToPush()">
+        Subscribe for Notifications
+      </button>
+      <button mat-raised-button color="primary" (click)="unsubscribeFromPush()">
+        Unsubscribe
+      </button>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
