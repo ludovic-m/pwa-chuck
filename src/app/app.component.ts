@@ -26,6 +26,15 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.VAPID_PUB_KEY = this.configService.get('VAPID_PUB_KEY');
     this.GetFacts();
+    if (this._swPush) {
+      this._swPush.messages
+        .subscribe(message => {
+          this._chuckSvc.getFacts().subscribe((result) => {
+            this.facts = result;
+          });
+          console.log('[App] Push message received', message);
+        });
+    }
   }
 
   GetFacts() {
@@ -43,12 +52,12 @@ export class AppComponent implements OnInit {
       console.log(pushSubcription);
 
       this._swPush.messages
-      .subscribe(message => {
-        this._chuckSvc.getFacts().subscribe((result) => {
-          this.facts = result;
+        .subscribe(message => {
+          this._chuckSvc.getFacts().subscribe((result) => {
+            this.facts = result;
+          });
+          console.log('[App] Push message received', message);
         });
-        console.log('[App] Push message received', message);
-      });
 
       this.pushService.addSubscriber(pushSubcription).subscribe(
         res => {
