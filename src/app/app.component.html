@@ -9,7 +9,8 @@
         <br>
         <br>
         <mat-list-item>
-          <mat-slide-toggle labelPosition="before" (change)="notificationChange($event)">
+          <mat-slide-toggle labelPosition="before" [(checked)]="isNotificationEnabled"
+            (change)="notificationChange($event)">
             Notifications
           </mat-slide-toggle>
         </mat-list-item>
@@ -33,13 +34,5 @@
         </mat-card-content>
       </mat-card>
     </div>
-    <!-- <div>
-      <button mat-raised-button color="accent" (click)="subscribeToPush()">
-        Subscribe for Notifications
-      </button>
-      <button mat-raised-button color="primary" (click)="unsubscribeFromPush()">
-        Unsubscribe
-      </button>
-    </div> -->
   </mat-sidenav-content>
 </mat-sidenav-container>

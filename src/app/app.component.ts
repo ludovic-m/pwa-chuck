@@ -17,6 +17,7 @@ import { Console } from '@angular/core/src/console';
 export class AppComponent implements OnInit {
   title = 'PWA Chuck !';
   facts: Observable<any>;
+  isNotificationEnabled: boolean;
 
   private VAPID_PUB_KEY: string;
 
@@ -28,12 +29,12 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.VAPID_PUB_KEY = this.configService.get('VAPID_PUB_KEY');
     this.GetFacts();
+    this.isNotificationEnabled = this._swPush.subscription != null;
+
     if (this._swPush) {
       this._swPush.messages
         .subscribe(message => {
-          this._chuckSvc.getFacts().subscribe((result) => {
-            this.facts = result;
-          });
+          this.GetFacts();
           console.log('[App] Push message received', message);
         });
     }
@@ -58,6 +59,7 @@ export class AppComponent implements OnInit {
   subscribeToPush() {
     console.log('request subscription');
     console.log(this.VAPID_PUB_KEY);
+
     this._swPush.requestSubscription({
       serverPublicKey: this.VAPID_PUB_KEY
     }).then(pushSubcription => {
@@ -65,9 +67,7 @@ export class AppComponent implements OnInit {
 
       this._swPush.messages
         .subscribe(message => {
-          this._chuckSvc.getFacts().subscribe((result) => {
-            this.facts = result;
-          });
+          this.GetFacts();
           console.log('[App] Push message received', message);
         });
 
