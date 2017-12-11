@@ -1,5 +1,5 @@
 <mat-sidenav-container fullscreen>
-  <mat-sidenav mode="push" #sideNav color="accent">
+  <mat-sidenav mode="overlay" #sideNav color="accent">
     <mat-nav-list color="accent">
       <nav>
         <div style="text-align:center;">
@@ -9,7 +9,7 @@
         <br>
         <br>
         <mat-list-item>
-          <mat-slide-toggle labelPosition="before">
+          <mat-slide-toggle labelPosition="before" (change)="notificationChange($event)">
             Notifications
           </mat-slide-toggle>
         </mat-list-item>
@@ -33,13 +33,13 @@
         </mat-card-content>
       </mat-card>
     </div>
-    <div>
+    <!-- <div>
       <button mat-raised-button color="accent" (click)="subscribeToPush()">
         Subscribe for Notifications
       </button>
       <button mat-raised-button color="primary" (click)="unsubscribeFromPush()">
         Unsubscribe
       </button>
-    </div>
+    </div> -->
   </mat-sidenav-content>
 </mat-sidenav-container>

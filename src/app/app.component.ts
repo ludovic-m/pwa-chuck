@@ -5,6 +5,8 @@ import { ChuckSvcService } from './chuck-svc/chuck-svc.service';
 import { Observable } from 'rxjs/Observable';
 import { PushService } from './push-svc/push-svc.service';
 import { HttpClient } from '@angular/common/http';
+import { MatSlideToggle, MatSlideToggleChange } from '@angular/material';
+import { Console } from '@angular/core/src/console';
 
 @Component({
   selector: 'app-root',
@@ -34,6 +36,16 @@ export class AppComponent implements OnInit {
           });
           console.log('[App] Push message received', message);
         });
+    }
+  }
+
+  notificationChange(event: MatSlideToggleChange) {
+
+    console.log('Nofications enabled: ' + event.checked);
+    if (event.checked) {
+      this.subscribeToPush();
+    } else {
+      this.unsubscribeFromPush();
     }
   }
 
