@@ -1,0 +1,28 @@
+{
+    "notification": {
+      "title": "Subscription completed",
+      "body": "You have successfully subscribed to our great notifications from Chuck Norris",
+      "dir": "auto",
+      "icon": "https://digitalmacgyver.files.wordpress.com/2012/04/chucknorris_approved.jpg",
+      "badge": "https://digitalmacgyver.files.wordpress.com/2012/04/chucknorris_approved.jpg",
+      "lang": "en",
+      "renotify": true,
+      "requireInteraction": false,
+      "tag": null,
+      "vibrate": [
+        300,
+        100,
+        400
+      ],
+      "actions": [
+        {
+          "action": "open",
+          "title": "Open"
+        }
+      ],
+      "data": {
+        "id_fact": 0,
+        "fact": "This the confirmation notification"
+      }
+    }
+  }

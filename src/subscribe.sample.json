@@ -1,0 +1,8 @@
+{
+  "endpoint": "https://fcm.googleapis.com/fcm/send/cp2Bq0wqMU0:AP...5AG8lHL6R6l_qljY71RlQ4dDK",
+  "expirationTime": null,
+  "keys": {
+    "p256dh": "BCdAQSRe-ZSFO9rNR2...vgNa24HDdqkyeUiE8p3_H4OFLzjfJCQ0YiehAI=",
+    "auth": "BNG...IEHV0CQ=="
+  }
+}
